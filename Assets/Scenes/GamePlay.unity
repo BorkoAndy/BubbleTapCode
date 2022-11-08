@@ -133,8 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 110556740}
   - component: {fileID: 110556741}
-  - component: {fileID: 110556743}
   - component: {fileID: 110556742}
+  - component: {fileID: 110556745}
   m_Layer: 0
   m_Name: Yellow
   m_TagString: Untagged
@@ -155,7 +155,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 745314793}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &110556741
 SpriteRenderer:
@@ -221,23 +221,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3785b9c3bcca80458e5ebad102fa0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 3
---- !u!58 &110556743
-CircleCollider2D:
+  lifetime: 3
+  minTapTime: 1
+--- !u!135 &110556745
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110556739}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.00000047683716}
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 3.2
+  m_Center: {x: 0, y: -0.00000047683716, z: 0}
 --- !u!1 &120717391
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,8 +246,8 @@ GameObject:
   m_Component:
   - component: {fileID: 120717392}
   - component: {fileID: 120717393}
-  - component: {fileID: 120717395}
   - component: {fileID: 120717394}
+  - component: {fileID: 120717395}
   m_Layer: 0
   m_Name: Red
   m_TagString: Untagged
@@ -270,7 +268,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 745314793}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &120717393
 SpriteRenderer:
@@ -336,23 +334,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d51d65a8ac896a64e989fd8c2a0875e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 3
---- !u!58 &120717395
-CircleCollider2D:
+  lifetime: 3
+  maxTimeBetweenTaps: 0.3
+--- !u!135 &120717395
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120717391}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.00000047683716}
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 3.24
+  m_Center: {x: 0, y: -0.00000047683716, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,11 +443,11 @@ GameObject:
   m_Component:
   - component: {fileID: 531171121}
   - component: {fileID: 531171122}
-  - component: {fileID: 531171125}
   - component: {fileID: 531171124}
+  - component: {fileID: 531171125}
   m_Layer: 0
   m_Name: Blue
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -535,23 +531,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51de1500a8538f84a9292d61465b08df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 3
---- !u!58 &531171125
-CircleCollider2D:
+  lifetime: 3
+--- !u!135 &531171125
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531171120}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 3.245
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &745314792
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,9 +574,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 531171121}
-  - {fileID: 1463973866}
   - {fileID: 120717392}
   - {fileID: 110556740}
+  - {fileID: 1463973866}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -749,8 +742,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1463973866}
   - component: {fileID: 1463973867}
-  - component: {fileID: 1463973869}
   - component: {fileID: 1463973868}
+  - component: {fileID: 1463973869}
   m_Layer: 0
   m_Name: Pink
   m_TagString: Untagged
@@ -771,7 +764,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 745314793}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1463973867
 SpriteRenderer:
@@ -837,20 +830,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c74d278e13f7646a023d5b4f2367d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 3
---- !u!58 &1463973869
-CircleCollider2D:
+  lifetime: 3
+  minDeltaPosition: 30
+--- !u!135 &1463973869
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463973865}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 3.29
+  m_Center: {x: 0, y: 0, z: 0}
