@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: e7656ec63c92c0147a927309c6cc2a7e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Yellow Rocks
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 027946aef3c3fff4995bd2bd0698098c, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
