@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Audio : MonoBehaviour
@@ -29,18 +26,17 @@ public class Audio : MonoBehaviour
         Bubble.OnBlow -= BubblePop;
         SettingsScreen.MusicPlay -= PlayMusic;
     }
-
-    private void PlayMusic(bool musicIsOn)
-    {
-        if(!musicIsOn) audioSource.Stop(); 
-        else audioSource.Play();
-    }
-
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         PlayMusic(PersistanceData.isMusic);
     }
+
+    private void PlayMusic(bool musicIsOn)
+    {
+        if(!musicIsOn) audioSource.Stop(); 
+        else audioSource.Play();
+    }   
 
     private void BubblePop()
     {

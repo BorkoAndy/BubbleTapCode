@@ -8,17 +8,14 @@ public class RedBubble :Bubble
     {        
         if (tapMade) tapTimer += Time.deltaTime;
         if (tapTimer >= maxTimeBetweenTaps) ResetCondition();
-        if (Input.touchCount > 0)
+        
+        Touch touch = Input.GetTouch(0);
+        if (TargetCheck(touch))
         {
-            Touch touch = Input.GetTouch(0);
-            if (TargetCheck(touch))
-            {
-                if (tapMade && tapTimer < maxTimeBetweenTaps) return true;
-
-
-                if (touch.phase == TouchPhase.Ended) tapMade = true;                    
-            }     
-        }
+            if (tapMade && tapTimer < maxTimeBetweenTaps) return true;
+            
+            if (touch.phase == TouchPhase.Ended) tapMade = true;                    
+        }    
         return false;
     }   
 }

@@ -326,7 +326,6 @@ MonoBehaviour:
   bubbleValue: 10
   scoreCounterText: {fileID: 1877393544}
   timerText: {fileID: 827886029}
-  _levelIncreaseFrequency: 10
 --- !u!1 &745314792
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,8 +375,8 @@ MonoBehaviour:
   - {fileID: 7643871012989672485, guid: 2a2b03bba8bed1c4db6f9507523c36e9, type: 3}
   - {fileID: 6168941843888039147, guid: 8e65d8fc16ffc5e4093df9c48c080587, type: 3}
   - {fileID: 2185987183204154307, guid: 176899bb12d060a43aa495dcd80cebdc, type: 3}
-  bubblesAmount: 20
   viewportRectangle: {fileID: 1658792068}
+  bubblesAmount: 40
   spawningFrequence: 1.5
   spawningLevelTimeDelta: 0.1
 --- !u!1 &775736936

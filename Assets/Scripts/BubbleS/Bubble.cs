@@ -13,7 +13,7 @@ public abstract class Bubble : MonoBehaviour
 
     protected void Update()
     {
-        if (BlowCondition())
+        if (Input.touchCount > 0 && BlowCondition())
             ConditionReached();
 
         TimerCheck();
@@ -54,9 +54,4 @@ public abstract class Bubble : MonoBehaviour
         ReturnToQueue();
         OnBlow?.Invoke();
     }
-    
-   
-
-   
-
 }

@@ -1,17 +1,17 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SettingsScreen : MonoBehaviour
 {
+    public static Action<bool> MusicPlay;
+
     [SerializeField] private int mainMenuScene;
     [SerializeField] private Toggle soundToggle;
     [SerializeField] private Toggle musicToggle;
 
-    public static Action <bool> MusicPlay;
+    
 
     private void Start()
     {
@@ -24,10 +24,7 @@ public class SettingsScreen : MonoBehaviour
         SceneManager.LoadScene(mainMenuScene);
     }
 
-    public void SoundChange()
-    {
-        PersistanceData.isSound = !soundToggle.isOn;
-    }
+    public void SoundChange() => PersistanceData.isSound = !soundToggle.isOn;
 
     public void MusicChange()
     {

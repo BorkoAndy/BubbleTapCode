@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,8 +5,8 @@ public class TutorialPages : MonoBehaviour
 {
     [SerializeField] private int mainMenuScene;
     [SerializeField] private GameObject[] tutorialPages;
-    private int currentPage;
 
+    private int currentPage;
 
     private void Start()
     {
@@ -17,7 +15,6 @@ public class TutorialPages : MonoBehaviour
             page.SetActive(false);
         tutorialPages[currentPage].SetActive(true);
     }
-
     public void AcceptButton() => SceneManager.LoadScene(mainMenuScene);
     public void PreviousPageButton()
     {

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
@@ -8,25 +6,24 @@ using UnityEngine.SceneManagement;
 public class GamePlayScreen : MonoBehaviour
 {
     public static int Score;
-
-    private int _timerMin;
-    private float _timerSec;
+    public static Action OnLevelIncrease;
 
     [SerializeField] private int looseScene;
     [SerializeField] private int bubbleValue;
     [SerializeField] private TextMeshProUGUI scoreCounterText;
     [SerializeField] private TextMeshProUGUI timerText;
-    
-    public static Action OnLevelIncrease;
 
+    private int _timerMin;
+    private float _timerSec;
+    
     private void OnEnable() => Bubble.OnBlow += IncreaseScore;
     private void OnDisable() => Bubble.OnBlow -= IncreaseScore;
+
     private void Start()
     {
         Score = 0;
         _timerMin = 3;
         _timerSec = 0;
-
     }
     private void Update()
     {

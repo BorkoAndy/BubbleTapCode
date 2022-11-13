@@ -6,20 +6,17 @@ public class PinkBubble :Bubble
 
     private Vector2 _startPosition;
     protected override bool BlowCondition()
-    {        
-        if (Input.touchCount > 0)
+    {
+        Touch touch = Input.GetTouch(0);
+        if (TargetCheck(touch))
         {
-            Touch touch = Input.GetTouch(0);
-            if (TargetCheck(touch))
-            {                  
-                if (touch.phase == TouchPhase.Began)
-                    _startPosition = touch.position;
+            if (touch.phase == TouchPhase.Began)
+                _startPosition = touch.position;
 
-                Vector2 deltaPosition = touch.position - _startPosition;
+            Vector2 deltaPosition = touch.position - _startPosition;
 
-                if (deltaPosition.magnitude >= minSwapDistance) return true;
-            }
-        }
+            if (deltaPosition.magnitude >= minSwapDistance) return true;
+        }        
         return false;
     }    
 }
