@@ -15,8 +15,8 @@ public abstract class Bubble : MonoBehaviour
     {
         if (Input.touchCount > 0 && BlowCondition())
             ConditionReached();
-
-        TimerCheck();
+        
+        TimerCheck();     
     }
 
     protected abstract bool BlowCondition();

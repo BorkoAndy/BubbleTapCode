@@ -8,13 +8,16 @@ public class YellowBubble : Bubble
     {
         Touch touch = Input.GetTouch(0);
 
-        if (TargetCheck(touch)) tapMade = true;
+        if (TargetCheck(touch))
+        {
+            tapMade = true;
 
-        if (touch.phase == TouchPhase.Ended && tapTimer < minTapHoldTime) ResetCondition();
-        
-        if (tapMade) tapTimer += Time.deltaTime;
+            if (touch.phase == TouchPhase.Ended && tapTimer < minTapHoldTime) ResetCondition();
 
-        if (tapTimer >= minTapHoldTime) return true;
+            if (tapMade) tapTimer += Time.deltaTime;
+
+            if (tapTimer >= minTapHoldTime) return true;
+        }
         return false;
     }   
 }

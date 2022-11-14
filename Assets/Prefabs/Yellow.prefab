@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 3
-  minTapHoldTime: 1
+  minTapHoldTime: 0.5
 --- !u!135 &2185987183204154316
 SphereCollider:
   m_ObjectHideFlags: 0
