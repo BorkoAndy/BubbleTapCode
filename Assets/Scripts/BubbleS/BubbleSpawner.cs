@@ -8,6 +8,7 @@ public class BubbleSpawner : MonoBehaviour
     [SerializeField] private BoxCollider2D viewportRectangle;    
     [SerializeField] private int bubblesAmount;
     [SerializeField] private float spawningFrequence;
+    [SerializeField] private float spawningFrequenceUnIncreaseable;
     [SerializeField] private float spawningLevelTimeDelta;
     
     private float _screenWidth;
@@ -45,15 +46,19 @@ public class BubbleSpawner : MonoBehaviour
         while (true)
         {
             Vector2 _spawnPosition = new Vector2(Random.Range(-_screenWidth / 2, _screenWidth / 2), Random.Range(-_screenHeight / 2, _screenHeight / 2));
-            Bubble newBubble = _bubbles.Dequeue();
-
-            if (newBubble == null)            
-               newBubble = CreateNewBubble();            
+            Bubble newBubble;
+            if (_bubbles.Count == 0) 
+               newBubble = CreateNewBubble(); 
+            else newBubble = _bubbles.Dequeue();           
 
             newBubble.transform.position = _spawnPosition;
             newBubble.gameObject.SetActive(true);
             yield return new WaitForSeconds(spawningFrequence);
         }
     }
-    private void LevelIncrease() => spawningFrequence -= spawningLevelTimeDelta;
+    private void LevelIncrease()
+    {
+        if(spawningFrequence > spawningFrequenceUnIncreaseable)
+            spawningFrequence -= spawningLevelTimeDelta;
+    }
 }

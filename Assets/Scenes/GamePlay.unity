@@ -307,6 +307,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -378,6 +379,7 @@ MonoBehaviour:
   viewportRectangle: {fileID: 1658792068}
   bubblesAmount: 40
   spawningFrequence: 1.5
+  spawningFrequenceUnIncreaseable: 0.3
   spawningLevelTimeDelta: 0.1
 --- !u!1 &803483926
 GameObject:
@@ -409,7 +411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
