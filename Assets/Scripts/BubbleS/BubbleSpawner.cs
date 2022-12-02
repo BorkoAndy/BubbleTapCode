@@ -24,26 +24,32 @@ public class BubbleSpawner : MonoBehaviour
         _screenWidth = viewportRectangle.size.x;
         _screenHeight = viewportRectangle.size.y;
        
-        QueueCreate();        
+        QueueCreate(bubblesAmount);        
         StartCoroutine(Spawn());        
     }
 
-    private void QueueCreate()
+    private void QueueCreate(int bubblesAmount)
     {
         for (int i = 0; i < bubblesAmount; i++)
         {
-            Bubble newBubble = Instantiate(bubblePrefabs[Random.Range(0, bubblePrefabs.Length)]);
+            Bubble newBubble = CreateNewBubble();
             newBubble.gameObject.SetActive(false);
             newBubble.transform.parent = transform;
             _bubbles.Enqueue(newBubble);
         }
     }
+
+    private Bubble CreateNewBubble() => Instantiate(bubblePrefabs[Random.Range(0, bubblePrefabs.Length)]);
     private IEnumerator Spawn()
     {
         while (true)
         {
             Vector2 _spawnPosition = new Vector2(Random.Range(-_screenWidth / 2, _screenWidth / 2), Random.Range(-_screenHeight / 2, _screenHeight / 2));
             Bubble newBubble = _bubbles.Dequeue();
+
+            if (newBubble == null)            
+               newBubble = CreateNewBubble();            
+
             newBubble.transform.position = _spawnPosition;
             newBubble.gameObject.SetActive(true);
             yield return new WaitForSeconds(spawningFrequence);
