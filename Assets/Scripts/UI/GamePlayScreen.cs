@@ -47,4 +47,10 @@ public class GamePlayScreen : MonoBehaviour
 
     private void TimerTextUpdate() => timerText.text = "Time: " + _timerMin + ":" + (int)_timerSec;
 
+    public void PauseButton()
+    {
+        if(Time.timeScale == 1)
+            Time.timeScale = 0; 
+        else Time.timeScale = 1;
+    }
 }

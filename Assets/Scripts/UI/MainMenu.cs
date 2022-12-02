@@ -12,4 +12,6 @@ public class MainMenu : MonoBehaviour
     public void SettingsButton() => SceneManager.LoadScene(settingsScene);
 
     public void ScoresButton() => SceneManager.LoadScene(bestScoreScene);
+
+    public void QuitButton() => Application.Quit();
 }
